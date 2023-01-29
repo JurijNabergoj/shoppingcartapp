@@ -4,7 +4,21 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Setup
 
-To install Angular on your local system, follow this guide: https://angular.io/guide/setup-local.
+Install latest Node LST version at: https://nodejs.org/en/download/.
+
+Open terminal and paste the following commands :
+```
+npm i @angular/cli -g
+```
+```
+git clone https://github.com/JurijNabergoj/shoppingcartapp
+```
+```
+cd shoppingcartapp
+```
+```
+npm i
+```
 
 ## Development server
 
