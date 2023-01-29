@@ -1,0 +1,8 @@
+<div class="shipping-item" *ngFor="let shipping of shippings">
+  <span>{{ shipping.type }}</span>
+  <span> {{ shipping.price | currency }}</span>
+  <button class="button" (click)="selectOption(shipping)">Select</button>
+</div>
+<p>
+  <span> You selected: </span> <b>{{ selectedType }}</b>
+</p>

@@ -1,0 +1,16 @@
+.div-1 {
+  border-width: 0px;
+  border-radius: 0px;
+  border-color: gray;
+  width: 90%;
+  border-style: solid;
+  padding: 5px;
+  margin-left: 0px; /* change this as you like */
+}
+p {
+  width: 380px;
+  margin: auto;
+}
+a {
+  font-size: 18px;
+}

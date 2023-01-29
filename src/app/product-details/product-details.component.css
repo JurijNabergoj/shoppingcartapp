@@ -1,0 +1,9 @@
+img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+}
+div.ex1 {
+  width: 400px;
+  margin: auto;
+}

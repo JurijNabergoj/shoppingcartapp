@@ -1,0 +1,53 @@
+<h1 style="margin-top:10px">Cart</h1>
+
+<div class="cart-item" *ngFor="let item of items">
+  <span>{{ item.name }}</span>
+  <span> {{ item.price | currency }}</span>
+  <button type="button" (click)="removeFromCart(item)">Remove item</button>
+</div>
+<h2>Please choose shipping option</h2>
+
+<app-shipping (shippingSelected)="receiveMessage($any($event))"></app-shipping>
+
+<div *ngIf="selectedShipping; else noShippingCost">
+  <h3>Total: {{ selectedShipping.price + calculateTotal() | currency }}</h3>
+</div>
+
+<ng-template #noShippingCost>
+  <h3>Total: {{ calculateTotal() | currency }}</h3>
+</ng-template>
+
+<p>Please enter your name and address below.</p>
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+  <div for="name">
+    Name
+    <label>
+      <input id="name" type="text" formControlName="name" ngModel required />
+    </label>
+  </div>
+
+  <div for="address">
+    Address
+    <label>
+      <input
+        id="address"
+        type="text"
+        formControlName="address"
+        ngModel
+        required
+      />
+    </label>
+  </div>
+  <button
+    [disabled]="checkoutForm.invalid || !selectedShipping"
+    class="button"
+    style="margin: 5px"
+    type="submit"
+    (click)="finishPurchase()"
+  >
+    Purchase
+  </button>
+  <button type="button" style="margin: 5px" [routerLink]="'/'">
+    Continue shopping
+  </button>
+</form>

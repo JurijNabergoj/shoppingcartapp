@@ -1,0 +1,16 @@
+<h1 style="margin-top: 10px;">Product details</h1>
+
+<div *ngIf="product">
+  <h2>{{ product.name }}</h2>
+  <h4>Only {{ product.price | currency }}</h4>
+  <div class="ex1">{{ product.description }}</div>
+  <br>
+  <img [src]="product.photo" />
+  <br>
+  <button type="button" style="margin: 5px" (click)="addToCart(product)">
+    Add to cart
+  </button>
+  <button type="button" style="margin: 5px" [routerLink]="'/'">
+    Back to selection
+  </button>
+</div>
